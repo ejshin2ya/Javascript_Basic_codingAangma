@@ -541,3 +541,41 @@ index.html:211 Hello, Mike
 - getName //이름을 얻어옴
 - createUserData //유저데이터 생성
 - checkLogin //로그인 여부 체크
+
+## 11. 함수 표현식, 화살표 함수
+
+> 함수 선언문 vs 함수 표현식
+
+- 함수선언문은 어디서든 호출 가능(호이스팅)
+
+```
+sayHello();
+function sayHello(){
+    console.log('Hello')
+}
+```
+
+- 함수 표현식은 순서대로 코드작성
+
+```
+let sayHello=function(){
+    console.log('Hello')
+}
+sayHello();
+```
+
+> 화살표 함수
+
+```
+let sayHello =()=>{
+    console.log('Hello')
+}
+```
+
+- return문이 한줄일 때는 중괄호 지우고 return도 생략가능
+
+```
+const add = (num1, num2) => num1+num2;
+```
+
+- 화살표함수는 Es6이후로 활발히 사용됨으로 익숙해지면 좋다.
