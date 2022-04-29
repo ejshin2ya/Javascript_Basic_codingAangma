@@ -373,3 +373,23 @@ const age = 30;
         console.log("돌아가.");
       }
 ```
+
+## 8. 반복문
+
+- for문, while, do~while문이 있다.
+- do~while은 적어도 한번은 실행하는 차이점이 있다.
+- break 멈추고 빠져나옴
+- continue 멈추고 다음 반복을 진행
+- 횟수가 정해져있으면 for문사용, 아니면 while을 사용
+- do while문은 거의 사용 안함
+
+```
+      //contiue
+      //짝수만
+      for (let i = 0; i < 10; i++) {
+        if (i % 2) {
+          continue;
+        }
+        console.log(i);
+      }
+```
