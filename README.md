@@ -393,3 +393,47 @@ const age = 30;
         console.log(i);
       }
 ```
+
+## 9. switch문
+
+- switch문에서는 break를 조건마다 작성해줘야한다.
+
+```
+switch(평가){
+    case A:
+    //A일때 코드
+    break;
+    case B:
+    //B일때 코드
+    break;
+}
+
+if(평가==A){
+    //A일때 코드
+}else if(평가==B){
+    //B일때 코드
+}
+```
+
+- 조건과 일치 하지 않는 값을 입력하면 default 값을 반환
+
+```
+      let fruit = prompt("무슨 과일을 사고 싶나요?");
+      switch (fruit) {
+        case "사과":
+          console.log("100원 입니다.");
+          break;
+        case "바나나":
+          console.log("200원 입니다.");
+          break;
+        case "키위":
+          console.log("300원 입니다.");
+          break;
+        case "멜론":
+        case "수박":
+          console.log("500원 입니다.");
+          break;
+        default:
+          console.log("그런 과일은 없습니다.");
+      }
+```
