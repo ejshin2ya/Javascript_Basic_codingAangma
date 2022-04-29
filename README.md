@@ -676,3 +676,23 @@ for(x in Mike){
     boy=null;
     man.showName();
 ```
+
+## 14. 배열(Array)
+
+> 배열의 특징
+
+- 배열은 문자 뿐 아니라 숫자, 객체, 함수 등도 포함할 수 있다.
+- push() : 배열 끝에 추가
+- pop(): 배열 끝 요소 제거
+- push, unshift : 배열 앞에 제거/ 추가(여러 요소를 한번에 추가도 가능)
+- 배열 반복문으로 for...of (for...in이 아니다-객체를 순회하는 for..in과 헷갈리지 않기)
+
+```
+    let days =["mon", "tue", "wed"];
+    days.push("thu");
+    days.unshift("sun");
+
+    for(let x of days){
+        console.log(x);
+    }
+```

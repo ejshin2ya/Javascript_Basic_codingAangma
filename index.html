@@ -303,16 +303,24 @@
     
     //method
 
-    let boy ={
-        name : "Mike",
-        showName : function(){
-            console.log(this.name)
-        },
-    };
-    let man = boy;
-    boy=null;
-    man.showName();
+    // let boy ={
+    //     name : "Mike",
+    //     showName : function(){
+    //         console.log(this.name)
+    //     },
+    // };
+    // let man = boy;
+    // boy=null;
+    // man.showName();
      
+    //14강
+    let days =["mon", "tue", "wed"];
+    days.push("thu");
+    days.unshift("sun");
+
+    for(let x of days){
+        console.log(x);
+    }
     </script>
     </script>
   </body>
