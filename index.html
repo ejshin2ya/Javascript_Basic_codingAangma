@@ -281,14 +281,38 @@
     //     name:"Jane",
     // }
     // console.log(isAdult(Jane))
-    const Mike ={
-    name:"Mike",
-    age:30
-    };
+    // const Mike ={
+    // name:"Mike",
+    // age:30
+    // };
 
-    for(x in Mike){
-        console.log(Mike[x]) //Mike['age]
-    }
+    // for(x in Mike){
+    //     console.log(Mike[x]) //Mike['age]
+    // }
+
+    //13. 객체
+
+    // let boy = {
+    //     name : 'Mike',
+    //     sayHello : ()=>{
+    //         console.log(this); //전역객체
+    //     }
+    // }
+    // boy.sayHello();
+    //Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+    
+    //method
+
+    let boy ={
+        name : "Mike",
+        showName : function(){
+            console.log(this.name)
+        },
+    };
+    let man = boy;
+    boy=null;
+    man.showName();
+     
     </script>
     </script>
   </body>

@@ -644,3 +644,35 @@ for(x in Mike){
 }
 // "Mike", 30
 ```
+
+## 13. 객체 - method, this
+
+- 화살표 함수는 일반 함수와는 달리 자신만의 this를 가지지 않음
+- 화살표 함수 내부에서 this를 사용하면, 그 this는 외부에서 값을 가져옴
+
+```
+ let boy = {
+        name : 'Mike',
+        sayHello : ()=>{
+            console.log(this); //전역객체
+        }
+    }
+    boy.sayHello();
+    //Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+```
+
+- 위 화살표함수에서 this는 boy가 아닌 전역객체가 된다. 브라우저 환경에서 전역객체는 window, Node js에서는 global이다.
+
+* boy를 null로 바꾸면 boy.name이 값을 가져오지 못하기 때문에, this.name으로 바꿔주면 boy가 아닌 boy 함수 {} 안의 값을 가리키게 되면서 정상적으로 작동한다.
+
+```
+    let boy ={
+        name : "Mike",
+        showName : function(){
+            console.log(this.name)
+        },
+    };
+    let man = boy;
+    boy=null;
+    man.showName();
+```
