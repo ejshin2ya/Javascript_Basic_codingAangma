@@ -579,3 +579,68 @@ const add = (num1, num2) => num1+num2;
 ```
 
 - 화살표함수는 Es6이후로 활발히 사용됨으로 익숙해지면 좋다.
+
+## 12. 객체(object)
+
+- 객체 안의 마지막 쉼표는 수정, 삭제에 용이하므로 그냥 두는 것이 좋다.
+
+```
+const superman={
+    name:'clark',
+    age:33,
+}
+```
+
+- 접근
+
+```
+superman.name //'clark'
+superman['age'] //33
+```
+
+- 추가
+
+```
+superman.gender='male';
+superman['hairColor']='black';
+```
+
+- 삭제
+
+```
+delete superman.hairColor;
+```
+
+- age가 없는 객체를 입력했을때도 함수가 true를 반환하는 것을 방지하기 위해 'age' in user를 사용한다.
+
+```
+    function isAdult(user){
+        if(!('age' in user) || user.age <20){
+            return false;
+        }
+        return true;
+    }
+    const Mike={
+        name : "Mike",
+        age: 30,
+    }
+    const Jane= {
+        name:"Jane",
+    }
+    console.log(isAdult(Jane))  //false 반환
+```
+
+- 객체 for...in
+- 객체의 key를 꺼낼 수 있다.
+
+```
+const Mike ={
+    name:"Mike",
+    age:30
+};
+
+for(x in Mike){
+    console.log(Mike[x]) //Mike['age]
+}
+// "Mike", 30
+```
