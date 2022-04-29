@@ -321,3 +321,55 @@ const age = 30;
         console.log("안녕히 가세요.");
       }
 ```
+
+## 7. 논리 연산자
+
+1. ||(OR)
+
+- 여러개 중 하나라도 true이면 true
+- 즉, 모든 값이 false일때만 false를 반환
+
+2. &&(AND)
+
+- 모든값이 true이면 true
+- 즉, 하나라도 false이면 false를 반환
+
+3. !(Not)
+
+- true면 false, false면 true
+
+4. 평가
+
+- OR는 첫번째 true를 발견하는 즉시 평가를 멈춤.
+- AND는 첫번째 false를 발견하는 즉시 평가를 멈춤
+
+* 성능 최적화를 위해 가능성이 적은 조건을 앞에다가 적어준다.
+
+5. 우선순위
+   > 남자이고, 이름이 Mike이거나 성인이면 통과하는 조건식만듬
+
+```
+      const gender = "F";
+      const name = "Jane";
+      const isAdult = "true";
+
+      if ((gender === "M" && name === "Mike") || isAdult) {
+        console.log("통과");
+      } else {
+        console.log("돌아가.");
+      }
+```
+
+> 결과는? 통과
+
+- 남자도 아니고 이름이 Mike도 아니지만 우선순위에 의해서 && 연산자가 먼저 실행되고 뒤에 있는 || 연산자는 true이기 떄문에 true를 반환하는 상황 발생
+
+> 의도한 바를 만들기 위해서 조건문의 괄호를 바꿔줘야한다.
+
+```
+      if (gender === "M" && (name === "Mike" || isAdult)) {
+        console.log("통과");
+      } else {
+        console.log("돌아가.");
+      }
+```

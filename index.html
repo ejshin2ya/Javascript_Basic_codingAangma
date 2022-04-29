@@ -115,22 +115,35 @@
       //   num--;
 
       //6강
-      console.log(10 > 5);
-      console.log(10 == 5); //동등 연산자
-      console.log(10 != 5);
+      //   console.log(10 > 5);
+      //   console.log(10 == 5); //동등 연산자
+      //   console.log(10 != 5);
 
-      const a = 1;
-      const b = "!";
-      console.log(a === b); //일치연산자
+      //   const a = 1;
+      //   const b = "!";
+      //   console.log(a === b); //일치연산자
 
-      // if, else, else if
-      const age = 30;
-      if (age > 19) {
-        console.log("환영 합니다.");
-      } else if (age === 19) {
-        console.log("수능 잘치세요");
+      //   // if, else, else if
+      //   const age = 30;
+      //   if (age > 19) {
+      //     console.log("환영 합니다.");
+      //   } else if (age === 19) {
+      //     console.log("수능 잘치세요");
+      //   } else {
+      //     console.log("안녕히 가세요.");
+      //   }
+
+      // 7강
+      //우선순위
+      //남자이고, 이름이 Mike이거나 성인이면 통과
+      const gender = "F";
+      const name = "Jane";
+      const isAdult = "true";
+
+      if (gender === "M" && (name === "Mike" || isAdult)) {
+        console.log("통과");
       } else {
-        console.log("안녕히 가세요.");
+        console.log("돌아가.");
       }
     </script>
   </body>
