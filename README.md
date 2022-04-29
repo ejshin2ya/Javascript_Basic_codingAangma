@@ -437,3 +437,107 @@ if(평가==A){
           console.log("그런 과일은 없습니다.");
       }
 ```
+
+## 10. 함수의 기초
+
+- 매개변수가 있는 함수에 매개변수가 없이 입력되면 undefined값이 들어가게 되어 조건문에서 false를 반환하여 false에 해당하는 조건을 실행하게 된다.
+
+```
+      function sayHello(name) {
+        let msg = "Hello";
+        if (name) {
+          msg += `, ${name}`;
+        }
+        console.log(msg);
+      }
+      sayHello();
+      sayHello("Mike");
+    </script>
+```
+
+- 함수안에 들어있는 let 변수는 함수밖에서 인식이 안된다.
+- 전역변수는 어디에서나 접근 가능한 변수
+- 지역변수는 함수 내부에서만 접근 가능한 변수
+
+```
+    let msg = "Hello"; //전역 변수 (global varable)
+    console.log('함수 호출 전')
+    console.log(msg)
+
+    function sayHello(name) {
+        if (name) {
+          msg += `, ${name}`;
+        }
+        //지역 변수(local varable)
+        console.log(msg);
+      }
+      sayHello("Mike");
+      console.log('함수 호출 후')
+      console.log(msg)
+
+      //index.html:200 함수 호출 전
+index.html:201 Hello
+index.html:207 Hello, Mike
+index.html:210 함수 호출 후
+index.html:211 Hello, Mike
+```
+
+- let은 동일한 이름으로 선언될 수 없지만 함수 내부와 밖에서는 동일하게 사용가능
+
+```
+ let msg = "welcome"; //전역 변수 (global varable)
+    console.log(msg)
+
+    function sayHello(name) {
+        //지역 변수(local varable)
+        let msg="Hello"
+        console.log(msg+" "+name);
+      }
+      sayHello("Mike");
+      console.log(msg)
+```
+
+- or연산자 활용
+- 매개변수가 있는 함수에 매개변수를 전달하지 않으면 undefined가 반환이 되어야 하는데, 여기서는 or연산자를 사용하여 name이 false일때 뒤에 값이 true가 되면서 friend가 newName에 입력이 된다.
+
+```
+    function sayHello(name){
+        let newName = name || "friend";
+        let msg =`Hello, ${newName}`
+        console.log(msg);
+    }
+    sayHello();
+    sayHello('Jane');
+```
+
+- 매개변수가 입력되지 않았을때 default값을 설정해놓으면 설정된 값이 입력된다.
+
+```
+    function sayHello(name='friend'){
+        let msg =`Hello, ${newName}`
+        console.log(msg);
+    }
+```
+
+- return으로 값 반환
+- 반환값 없는 함수와 return 오른쪽에 값이 없는 함수는 undefined를 반환한다.
+- return오른쪽에 값이 없는 경우는 함수를 종료하려는 목적으로 사용하기도 한다.
+
+```
+    function showError(){
+       alert('에러가 발생했습니다.');
+       return;
+   }
+   const result=showError();
+   console.log(result);
+```
+
+- 함수(function) 만들기 Tip
+
+1. 한번에 한작업을 집중
+2. 읽기 쉽고 어떤 동작인지 알 수 있게 네이밍
+
+- showError //에러를 보여줌
+- getName //이름을 얻어옴
+- createUserData //유저데이터 생성
+- checkLogin //로그인 여부 체크
