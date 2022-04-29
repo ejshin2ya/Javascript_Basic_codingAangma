@@ -176,3 +176,88 @@ alert(`안녕하세요 ${name}님`);
 - 스타일링이 불가능하다. 위치, 모양 바꿀 수 없다. 보통 모달을 많이 사용한다.
 
 * 간편하고 빠르다는 장점도 있다.
+
+## 4강. 형변환
+
+- String => 문자형으로 변환
+- Number() => 숫자형으로 변환
+- Boolean() => 불린형으로 변환
+
+- 자료형이 다르면 의도치한 결과를 불러 일으킬때가 있어서 형변환이 필요하다.
+
+* prompt 입력값은 문자형이기 때문에 수학점수와 영어점수를 덧셈(+) 문자형으로 출력된다.
+
+```
+      const mathScore = prompt("수학 몇점?");
+      const engScore = prompt("영어 몇점?");
+      const result = (mathScore + engScore) / 2;
+      console.log(result);
+```
+
+- 반면에 덧셈이 아닌 나눗셈은 자동형변환 기능이 있어서 문자형 자료를 숫자로 나눠주는 특징이 있다.
+
+```
+"9080" / 2; // 4540
+"6"/"2" =3; //자동 형변환
+```
+
+- 자동형변환은 원인을 찾기 어려운 경우가 많으므로 명시적 형변환을 해줘야한다.
+
+* String() :괄호안의 값을 문자열로 바꿔준다.
+
+```
+      console.log(
+        String(3),
+        String(true),
+        String(false),
+        String(null),
+        String(undefined)
+      );
+      //3 true false null undefined
+```
+
+- Number() : 괄호안의 값을 숫자로 바꿔준다.
+- 괄호안에 문자형이 있을때는 NaN이 나오므로 주의
+
+```
+      console.log(
+          Number("1234"),
+          Number("abcd"),
+          Number(true),
+          Number(false)
+          );
+    //1234 NaN 1 0
+```
+
+- Boolean() : false에 대해서만 알면 된다. 그외는 true 반환
+- Boolean()이 false를 반환하는 경우
+
+1. 숫자 0
+2. 빈문자열 ""
+3. null
+4. undefined
+5. NaN
+
+```
+      console.log(
+        Boolean(0),
+        Boolean(""),
+        Boolean(null),
+        Boolean(NaN),
+        Boolean(undefined)
+      );
+      //false false false false false
+```
+
+> 주의 사항
+
+- Number(null) => 0을 반환
+- Number(undefined) => NaN을 반환
+- 사용자가 확인창에서 취소 버튼을 누르면 null값이 들어오게 되고 이를 숫자로 바꾸면 0으로 반환된다.
+
+> 주의사항 2
+
+- Boolean(0) => false
+- Boolean("0") => true
+- Boolean('') => false
+- Boolean(' ') => true(공백이 있기 때문)
